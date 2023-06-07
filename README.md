@@ -25,9 +25,12 @@
 
 
 ## Introduction
-<div align="center"><h4>SparseTrack is a simple and strong online tracker.</h4></div>
+<div align="center"><h4>SparseTrack is a simple and strong online tracker. The essence of SparseTrack lies in associating occlusions hierarchically based on depth via the DCM. </h4></div>
+ 
+<div align="center">
 ![image](DCM.pdf "DCM")
-
+</div>
+ 
 Exploring robust and efficient association methods has always been an important issue in multiple-object tracking (MOT).
 Although existing tracking methods have achieved impressive performance, congestion and frequent occlusions still pose challenging problems in multi-object tracking. 
 We reveal that performing sparse decomposition on dense scenes is a crucial step to enhance the performance of associating occluded targets. 
