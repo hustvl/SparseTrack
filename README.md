@@ -73,7 +73,7 @@ SparseTrack provides a new perspective for solving the challenging crowded scene
  
 ## Acknowledgements
 
-<!-- MapTR is based on [mmdetection3d](https://github.com/open-mmlab/mmdetection3d). It is also greatly inspired by the following outstanding contributions to the open-source community: [BEVFusion](https://github.com/mit-han-lab/bevfusion), [BEVFormer](https://github.com/fundamentalvision/BEVFormer), [HDMapNet](https://github.com/Tsinghua-MARS-Lab/HDMapNet), [GKT](https://github.com/hustvl/GKT), [VectorMapNet](https://github.com/Mrmoore98/VectorMapNet_code). -->
+A large part of the code is borrowed from YOLOX, FairMOT, ByteTrack. Many thanks for their wonderful works.
 
 <!-- ## Citation -->
 <!-- If you find MapTR is useful in your research or applications, please consider giving us a star 🌟 and citing it by the following BibTeX entry.
