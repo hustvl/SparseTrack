@@ -28,7 +28,7 @@
 <!-- <div align="center"><h4>The essence of SparseTrack lies in associating occlusions hierarchically based on depth via the DCM. </h4></div> -->
  
 <div align="center">
-![image](DCM.png "DCM")
+![image](./DCM.png)
 </div>
  
 Exploring robust and efficient association methods has always been an important issue in multiple-object tracking (MOT).
