@@ -14,14 +14,9 @@
 
 </div>
 
-#
-### News
-<!-- * **`May. 12th, 2023`:** MapTR now support various bevencoder, such as [BEVFormer encoder](projects/configs/maptr/maptr_tiny_r50_24e_bevformer.py) and [BEVFusion bevpool](projects\configs\maptr\maptr_tiny_r50_24e_bevpool.py). Check it out!
-* **`Apr. 20th, 2023`:** Extending MapTR to a general map annotation framework ([paper](https://arxiv.org/pdf/2304.09807.pdf)), with high flexibility in terms of spatial scale and element type.
-* **`Mar. 22nd, 2023`:** By leveraging MapTR, VAD ([paper](https://arxiv.org/abs/2303.12077), [code](https://github.com/hustvl/VAD))  models the driving scene as fully vectorized representation, achieving SoTA end-to-end planning performance!
-* **`Jan. 21st, 2023`:** MapTR is accepted to ICLR 2023 as **Spotlight Presentation**!
-* **`Nov. 11st, 2022`:** We release an initial version of MapTR.
-* **`Aug. 31st, 2022`:** We released our paper on Arxiv. Code/Models are coming soon. Please stay tuned! ☕️ -->
+
+## News
+
 
 
 ## Abstract
@@ -71,6 +66,8 @@ SparseTrack provides a new perspective for solving the challenging crowded scene
 ## Model zoo
  
 ## Training
+
+## Tracking
  
 ## Demo
  
