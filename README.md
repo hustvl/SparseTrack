@@ -73,7 +73,7 @@ SparseTrack provides a new perspective for solving the challenging crowded scene
  
 ## Acknowledgements
 
-A large part of the code is borrowed from [YOLOX](https://github.com/Megvii-BaseDetection/YOLOX), [FairMOT](https://github.com/ifzhang/FairMOT), [ByteTrack](https://github.com/ifzhang/ByteTrack). 
+A large part of the code is borrowed from [YOLOX](https://github.com/Megvii-BaseDetection/YOLOX), [FairMOT](https://github.com/ifzhang/FairMOT), [ByteTrack](https://github.com/ifzhang/ByteTrack), [Detectron2](https://github.com/facebookresearch/detectron2). 
  Many thanks for their wonderful works.
 
 <!-- ## Citation -->
