@@ -27,7 +27,7 @@
 ## Abstract
 ####  SparseTrack is a simply and strong multi-object tracker. 
  
-<img src="DCM.png" width="400"/> <img src="order.png" width="400"  height="800"/>
+<img src="DCM.png" width="400"/> <img src="order.png" width="400"  height="400"/>
 
 Exploring robust and efficient association methods has always been an important issue in multiple-object tracking (MOT).
 Although existing tracking methods have achieved impressive performance, congestion and frequent occlusions still pose challenging problems in multi-object tracking. 
