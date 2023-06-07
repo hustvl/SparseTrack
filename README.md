@@ -73,7 +73,8 @@ SparseTrack provides a new perspective for solving the challenging crowded scene
  
 ## Acknowledgements
 
-A large part of the code is borrowed from YOLOX, FairMOT, ByteTrack. Many thanks for their wonderful works.
+A large part of the code is borrowed from [YOLOX](https://github.com/Megvii-BaseDetection/YOLOX), [FairMOT](https://github.com/ifzhang/FairMOT), [ByteTrack](https://github.com/ifzhang/ByteTrack). 
+ Many thanks for their wonderful works.
 
 <!-- ## Citation -->
 <!-- If you find MapTR is useful in your research or applications, please consider giving us a star 🌟 and citing it by the following BibTeX entry.
