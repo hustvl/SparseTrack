@@ -46,7 +46,7 @@ SparseTrack provides a new perspective for solving the challenging crowded scene
 
 **Notes**: 
 - All the experiments are performed on NVIDIA GeForce RTX 3090 GPUs. 
-- All implementations use the same detector and model weights as [BYTE](https://github.com/ifzhang/ByteTrack) . 
+- All implementations use the same detector and model weights as [ByteTrack](https://github.com/ifzhang/ByteTrack) . 
  
 ## Qualitative results on nuScenes val set
 <!-- <div align="center"><h4>MapTR maintains stable and robust map construction quality in various driving scenes.</h4></div> -->
