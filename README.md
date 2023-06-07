@@ -27,7 +27,7 @@
 ## Introduction
 <div align="center"><h4>SparseTrack is a simple and strong online .</h4></div>
 
-![framework](assets/overview.pdf "framework") 
+[framework](assets/DCM.pdf "framework") 
 
 Exploring robust and efficient association methods has always been an important issue in multiple-object tracking (MOT).
 Although existing tracking methods have achieved impressive performance, congestion and frequent occlusions still pose challenging problems in multi-object tracking. 
