@@ -25,7 +25,7 @@
 
 
 ## Introduction
-<!-- <div align="center"><h4>The essence of SparseTrack lies in associating occlusions hierarchically based on depth via the DCM. </h4></div> -->
+<div align="center"><h4> SparseTrack is a simply and strong multi-object tracker. </h4></div>
  
  <p align="center"><img src="DCM.png" width="500"/></p>
 
