@@ -22,8 +22,6 @@
 ## Abstract
 ####  SparseTrack is a simply and strong multi-object tracker. 
  
-<p align="center"><img src="DCM.png" width="500"/></p> 
-
 Exploring robust and efficient association methods has always been an important issue in multiple-object tracking (MOT).
 Although existing tracking methods have achieved impressive performance, congestion and frequent occlusions still pose challenging problems in multi-object tracking. 
 We reveal that performing sparse decomposition on dense scenes is a crucial step to enhance the performance of associating occluded targets. 
@@ -31,7 +29,8 @@ To this end, we propose a pseudo-depth estimation method for obtaining the relat
 Secondly, we design a depth cascading matching (DCM) algorithm, which can use the obtained depth information to convert a dense target set into multiple sparse target subsets and perform data association on these sparse target subsets in order from near to far. 
 By integrating the pseudo-depth method and the DCM strategy into the data association process, we propose a new tracker, called SparseTrack. 
 SparseTrack provides a new perspective for solving the challenging crowded scene MOT problem and achieves comparable performance with state-of-the-art (SOTA) on the MOT17 and MOT20 test set.
-
+<p align="center"><img src="DCM.png" width="500"/></p> 
+ 
 ## Tracking performance
 ### Results on MOT challenge test set
 | Dataset    | HOTA | MOTA | IDF1 | MT | ML | FP | FN | IDs |
