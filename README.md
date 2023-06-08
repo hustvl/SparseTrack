@@ -1,27 +1,14 @@
 <div align="center">
 <h1>SparseTrack:  
 <h3>Multi-Object Tracking by Performing Scene Decomposition based on Pseudo-Depth</h3>
-
-<!-- [Bencheng Liao](https://github.com/LegendBC)<sup>1,2,3</sup> \*, [Shaoyu Chen](https://scholar.google.com/citations?user=PIeNN2gAAAAJ&hl=en&oi=sra)<sup>1,3</sup> \*, [Xinggang Wang](https://xinggangw.info/)<sup>1 :email:</sup>, [Tianheng Cheng](https://scholar.google.com/citations?user=PH8rJHYAAAAJ&hl=zh-CN)<sup>1,3</sup>, [Qian Zhang](https://scholar.google.com/citations?user=pCY-bikAAAAJ&hl=zh-CN)<sup>3</sup>, [Wenyu Liu](http://eic.hust.edu.cn/professor/liuwenyu/)<sup>1</sup>, [Chang Huang](https://scholar.google.com/citations?user=IyyEKyIAAAAJ&hl=zh-CN)<sup>3</sup>
- 
-<sup>1</sup> School of EIC, HUST, <sup>2</sup> Institute of Artificial Intelligence, HUST, <sup>3</sup> Horizon Robotics -->
-
-<!-- (\*) equal contribution, (<sup>:email:</sup>) corresponding author. -->
-
-<!-- ArXiv Preprint ([arXiv 2208.14437](https://arxiv.org/abs/2208.14437)) -->
-
-<!-- [openreview ICLR'23](https://openreview.net/forum?id=k7p_YAO7yE), accepted as **ICLR Spotlight** -->
-
 </div>
-
+####  SparseTrack is a simply and strong multi-object tracker. 
 
 ## News
 
 
 
 ## Abstract
-####  SparseTrack is a simply and strong multi-object tracker. 
- 
 Exploring robust and efficient association methods has always been an important issue in multiple-object tracking (MOT).
 Although existing tracking methods have achieved impressive performance, congestion and frequent occlusions still pose challenging problems in multi-object tracking. 
 We reveal that performing sparse decomposition on dense scenes is a crucial step to enhance the performance of associating occluded targets. 
