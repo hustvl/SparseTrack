@@ -42,7 +42,7 @@ SparseTrack provides a new perspective for solving the challenging crowded scene
  ### Comparison on DanceTrack test set
 |  Method  | HOTA | DetA | AssA | MOTA | IDF1 |
 |------------|-------|-------|------|------|-------|
-| SparseTrack | 55.5 (+7.8) | 78.9 (+7.9) | 39.1 (+7.0) | 91.3 (+1.7) | 58.3 (+4.4) |
+| SparseTrack | 55.5 (**+7.8**) | 78.9 (**+7.9**) | 39.1 (**+7.0**) | 91.3 (**+1.7**) | 58.3 (**+4.4**) |
 | ByteTrack  |  47.7 | 71.0 | 32.1 | 89.6 | 53.9 | 
     
 **Notes**: 
