@@ -39,6 +39,12 @@ SparseTrack provides a new perspective for solving the challenging crowded scene
 |MOT17       | 65.1 | 81.0 | 80.1 | 54.6% | 14.3% | 23904 | 81927 | 1170 |
 |MOT20       | 63.4 | 78.2 | 77.3 | 69.9% | 9.2%  | 25108 | 86720 | 1116 |
 
+ ### Comparison on DanceTrack test set
+|  Method  | HOTA | DetA | AssA | MOTA | IDF1 |
+|------------|-------|-------|------|------|-------|
+| SparseTrack | 55.5(+7.8) | 78.9(+7.9) | 39.1(+7.0) | 91.3(+1.7) | 58.3(+4.4) |
+| ByteTrack  |  47.7 | 71.0 | 32.1 | 89.6 | 53.9 | 
+    
 **Notes**: 
 - All the experiments are performed on NVIDIA GeForce RTX 3090 GPUs. 
 - All implementations use the same detector and model weights as [ByteTrack](https://github.com/ifzhang/ByteTrack) . 
