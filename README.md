@@ -1,8 +1,11 @@
-<div align="center">
-<h1>SparseTrack:  
-<h3>Multi-Object Tracking by Performing Scene Decomposition based on Pseudo-Depth</h3>
-</div>
+
+# SparseTrack
 ####  SparseTrack is a simply and strong multi-object tracker. 
+
+ **SparseTrack: Multi-Object Tracking by Performing Scene Decomposition based on Pseudo-Depth**
+ 
+
+
 
 ## News
 
