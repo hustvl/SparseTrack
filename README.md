@@ -46,7 +46,7 @@ SparseTrack provides a new perspective for solving the challenging crowded scene
 | ByteTrack  |  47.7 | 71.0 | 32.1 | 89.6 | 53.9 | 
     
 **Notes**: 
-- All the experiments are performed on NVIDIA GeForce RTX 3090 GPUs. 
+- All the inference experiments are performed on 1 NVIDIA GeForce RTX 3090 GPUs. 
 - Each experiment uses the same detector and model weights as [ByteTrack](https://github.com/ifzhang/ByteTrack) . 
 - SparseTrack relies on IoU distance association only and do not use any appearance embedding, learnable motion, and attention components.
  
