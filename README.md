@@ -109,9 +109,6 @@ Additionally, we conducted joint training on MOT20 train half and Crowdhuman, an
 
 The model trained on DanceTrack can be available at [yolox_x_dancetrack](https://drive.google.com/drive/folders/1-uxcNTi7dhuDNGC5MmzXyllLzmVbzXay?usp=sharing).  
 
-**Notes**: 
-- All models have been published. We do not train any additional models.
-
 
 ## Training
 
