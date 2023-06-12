@@ -102,7 +102,7 @@ python3 tools/mix_data_test_mot20.py
 ```
 
 ## Model zoo
-See [ByteTrack.model_zoo](https://github.com/ifzhang/ByteTrack#model-zoo). All tracking results are obtained via the corresponding YOLOX_X model weights for inference.
+See [ByteTrack.model_zoo (yolox_x)](https://github.com/ifzhang/ByteTrack#model-zoo). 
 
 Additionally, we conducted joint training on MOT20 train half and Crowdhuman, and evaluated on MOT20 val half. The model as follows: [yolox_x_mot20_ablation](https://drive.google.com/file/d/1F2XwyYKj1kefLPUFRHxgnpaAmEwyoocw/view?usp=drive_link)
 
