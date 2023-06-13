@@ -137,11 +137,11 @@ Add clip operation in line 138-139 in [data_augment.py](https://github.com/hustv
 ## Tracking
 All tracking experimental scripts are run in the following manner. You first place the model weights in the **<ROOT/SparseTrack/pretrain/>**, and change the **VAL_JSON** and **VAL_PATH** in [register_data.py](https://github.com/hustvl/SparseTrack/blob/main/register_data.py).
 ```
-# tracking on mot17 train set or test_set
+# tracking on mot17 train set or test set
 CUDA_VISIBLE_DEVICES=0 python3 track.py  --num-gpus 1  --config-file mot17_track_cfg.py 
 
 
-# tracking on mot20 train set or test_set
+# tracking on mot20 train set or test set
 CUDA_VISIBLE_DEVICES=0 python3 track.py  --num-gpus 1  --config-file mot20_track_cfg.py 
 
 
