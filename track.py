@@ -111,7 +111,7 @@ def do_track(cfg, model):
     model.eval()
     if cfg.track.fuse:
         logger.info("\tFusing model...")
-        model = fuse_model(model)# 吸BN
+        model = fuse_model(model)
 
     # start evaluate
     evaluator.evaluate(
