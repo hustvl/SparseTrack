@@ -102,7 +102,7 @@ python3 tools/mix_data_test_mot20.py
 ```
 
 ## Model zoo
-See [ByteTrack.model_zoo (yolox_x)](https://github.com/ifzhang/ByteTrack#model-zoo). 
+See [ByteTrack.model_zoo (yolox_x)](https://github.com/ifzhang/ByteTrack#model-zoo). ```
 
 Additionally, we conducted joint training on MOT20 train half and Crowdhuman, and evaluated on MOT20 val half. The model as follows: [yolox_x_mot20_ablation](https://drive.google.com/file/d/1F2XwyYKj1kefLPUFRHxgnpaAmEwyoocw/view?usp=drive_link)
 
@@ -110,6 +110,14 @@ The model trained on DanceTrack can be available at [yolox_x_dancetrack](https:/
 
 
 ## Training
+All training is conducted on a unified script. You need to adjust the eval_file path in register_data.py, and then run as follows：
+```
+# training on MOT17, CrowdHuman, ETHZ, Citypersons, evaluate on MOT17 train set.
+CUDA_VISIBLE_DEVICES=0,1,2,3 python train.py --num-gpus 4  --config-file mot17_train_config.py 
+
+# training on MOT20, CrowdHuman, evaluate on MOT20 train set.
+CUDA_VISIBLE_DEVICES=0,1,2,3 python train.py --num-gpus 4  --config-file mot20_train_config.py 
+```
 
 ## Tracking
  
