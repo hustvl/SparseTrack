@@ -54,10 +54,10 @@ ROOT
    |
    |——————SparseTrack(repo)
    |           └—————mix
-   |                  └——————mix_17
-   |                  └——————mix_20
-   |                  └——————ablation_17
-   |                  └——————ablation_20
+   |                  └——————mix_17/annotations
+   |                  └——————mix_20/annotations
+   |                  └——————ablation_17/annotations
+   |                  └——————ablation_20/annotations
    |——————MOT17
    |        └——————train
    |        └——————test
