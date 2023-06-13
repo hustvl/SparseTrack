@@ -115,11 +115,29 @@ All training is conducted on a unified script. You need to change the VAL_JSON a
 # training on MOT17, CrowdHuman, ETHZ, Citypersons, evaluate on MOT17 train set.
 CUDA_VISIBLE_DEVICES=0,1,2,3 python train.py --num-gpus 4  --config-file mot17_train_config.py 
 
+
 # training on MOT20, CrowdHuman, evaluate on MOT20 train set.
 CUDA_VISIBLE_DEVICES=0,1,2,3 python train.py --num-gpus 4  --config-file mot20_train_config.py 
 ```
 
 ## Tracking
+All tracking experimental scripts are run in the following manner. You must first place the model weights in the <ROOT/SparseTrack/pretrain/>, and change the VAL_JSON and VAL_PATH in register_data.py.
+```
+# tracking on mot17 train set
+CUDA_VISIBLE_DEVICES=0 python3 track.py  --num-gpus 1  --config-file mot17_track_cfg.py 
+
+
+# tracking on mot20 train set
+CUDA_VISIBLE_DEVICES=0 python3 track.py  --num-gpus 1  --config-file mot20_track_cfg.py 
+
+
+# tracking on mot17 val_half set
+CUDA_VISIBLE_DEVICES=0 python3 track.py  --num-gpus 1  --config-file mot17_ab_track_cfg.py 
+
+
+# tracking on mot20 val_half set
+CUDA_VISIBLE_DEVICES=0 python3 track.py  --num-gpus 1  --config-file mot20_ab_track_cfg.py  
+```
  
 ## Demo
  
