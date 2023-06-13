@@ -153,8 +153,6 @@ CUDA_VISIBLE_DEVICES=0 python3 track.py  --num-gpus 1  --config-file mot17_ab_tr
 CUDA_VISIBLE_DEVICES=0 python3 track.py  --num-gpus 1  --config-file mot20_ab_track_cfg.py  
 ```
  
-## Demo
- 
 ## Citation -->
 If you find SparseTrack is useful in your research or applications, please consider giving us a star 🌟 and citing it by the following BibTeX entry.
 ```bibtex
