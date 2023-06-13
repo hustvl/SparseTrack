@@ -110,7 +110,7 @@ The model trained on DanceTrack can be available at [yolox_x_dancetrack](https:/
 
 
 ## Training
-All training is conducted on a unified script. You need to change the VAL_JSON and VAL_PATH in register_data.py, and then run as follows：
+All training is conducted on a unified script. You need to change the **VAL_JSON** and **VAL_PATH** in register_data.py, and then run as follows：
 ```
 # training on MOT17, CrowdHuman, ETHZ, Citypersons, evaluate on MOT17 train set.
 CUDA_VISIBLE_DEVICES=0,1,2,3 python train.py --num-gpus 4  --config-file mot17_train_config.py 
