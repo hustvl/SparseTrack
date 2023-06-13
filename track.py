@@ -205,6 +205,4 @@ CUDA_VISIBLE_DEVICES=0 python3 track.py  --num-gpus 1  --config-file mot20_track
 CUDA_VISIBLE_DEVICES=0 python3 track.py  --num-gpus 1  --config-file mot17_ab_track_cfg.py 
 
 CUDA_VISIBLE_DEVICES=0 python3 track.py  --num-gpus 1  --config-file mot20_ab_track_cfg.py  
-
-CUDA_VISIBLE_DEVICES=0 python3 track.py -f exps/example/mot/yolox_x_dance_val.py -c pretrained/bytetrack_dance.pth.tar -b 1 -d 1 --fp16 --fuse --deep --mot20 --track_thresh 0.7
 '''
