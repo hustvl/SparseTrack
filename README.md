@@ -147,10 +147,6 @@ CUDA_VISIBLE_DEVICES=0 python3 track.py  --num-gpus 1  --config-file mot20_ab_tr
  
 ## Demo
  
-## Acknowledgements
-A large part of the code is borrowed from [YOLOX](https://github.com/Megvii-BaseDetection/YOLOX), [FairMOT](https://github.com/ifzhang/FairMOT), [ByteTrack](https://github.com/ifzhang/ByteTrack), [Detectron2](https://github.com/facebookresearch/detectron2). 
- Many thanks for their wonderful works.
-
 ## Citation -->
 If you find SparseTrack is useful in your research or applications, please consider giving us a star 🌟 and citing it by the following BibTeX entry.
 ```bibtex
@@ -161,4 +157,8 @@ If you find SparseTrack is useful in your research or applications, please consi
   year={2023}
 }
 ```
+
+## Acknowledgements
+A large part of the code is borrowed from [YOLOX](https://github.com/Megvii-BaseDetection/YOLOX), [FairMOT](https://github.com/ifzhang/FairMOT), [ByteTrack](https://github.com/ifzhang/ByteTrack), [Detectron2](https://github.com/facebookresearch/detectron2). 
+ Many thanks for their wonderful works.
 
