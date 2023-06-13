@@ -53,7 +53,11 @@ Download [MOT17](https://motchallenge.net/), [MOT20](https://motchallenge.net/),
 ROOT
    |
    |——————SparseTrack(repo)
-   |
+   |           └—————mix
+   |                  └——————mix_17
+   |                  └——————mix_20
+   |                  └——————ablation_17
+   |                  └——————ablation_20
    |——————MOT17
    |        └——————train
    |        └——————test
