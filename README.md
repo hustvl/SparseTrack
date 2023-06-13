@@ -119,7 +119,7 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 python train.py --num-gpus 4  --config-file mot17_t
 # training on MOT20, CrowdHuman, evaluate on MOT20 train set.
 CUDA_VISIBLE_DEVICES=0,1,2,3 python train.py --num-gpus 4  --config-file mot20_train_config.py 
 ```
-** NOTES ** 
+**Notes**: 
 For MOT20, you need to clip the bounding boxes inside the image.
 
 Add clip operation in line 138-139 in data_augment.py, line 118-121 in mosaicdetection.py, line 213-221 in mosaicdetection.py, line 115-118 in boxes.py.
