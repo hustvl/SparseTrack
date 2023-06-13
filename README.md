@@ -39,7 +39,7 @@ Exploring robust and efficient association methods has always been an important 
 #### Dependence
 This project is an implementation version of [Detectron2](https://github.com/facebookresearch/detectron2) and requires the compilation of [OpenCV](https://opencv.org/), [Boost](https://www.boost.org), and [pbcvt](https://github.com/Algomorph/pyboostcvconverter).
 
-Please copy the "pbcvt.xxxxxx.so" file compiled via [pbcvt](https://github.com/Algomorph/pyboostcvconverter) to the ** <ROOT/SparseTrack/tracker/> ** directory.
+Please copy the "pbcvt.xxxxxx.so" file compiled via [pbcvt](https://github.com/Algomorph/pyboostcvconverter) to the **<ROOT/SparseTrack/tracker/>** directory.
  
 #### Install
 ```shell
