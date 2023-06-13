@@ -120,7 +120,7 @@ CUDA_VISIBLE_DEVICES=0,1,2,3 python train.py --num-gpus 4  --config-file mot20_t
 **Notes**: 
 For MOT20, you need to clip the bounding boxes inside the image.
 
-Add clip operation in line 138-139 in [data_augment.py](https://github.com/hustvl/SparseTrack/blob/main/datasets/data/data_augment.py), line 118-121 in [mosaicdetection.py](https://github.com/hustvl/SparseTrack/blob/main/datasets/data/datasets/mosaicdetection.py), line 213-221 in mosaicdetection.py, line 115-118 in [boxes.py]().
+Add clip operation in line 138-139 in [data_augment.py](https://github.com/hustvl/SparseTrack/blob/main/datasets/data/data_augment.py), line 118-121 in [mosaicdetection.py](https://github.com/hustvl/SparseTrack/blob/main/datasets/data/datasets/mosaicdetection.py), line 213-221 in mosaicdetection.py, line 115-118 in [boxes.py](https://github.com/hustvl/SparseTrack/blob/main/utils/boxes.py).
 
 ## Tracking
 All tracking experimental scripts are run in the following manner. You must first place the model weights in the **<ROOT/SparseTrack/pretrain/>**, and change the **VAL_JSON** and **VAL_PATH** in [register_data.py](https://github.com/hustvl/SparseTrack/blob/main/register_data.py).
