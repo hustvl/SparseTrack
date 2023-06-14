@@ -161,7 +161,7 @@ If you find SparseTrack is useful in your research or applications, please consi
 @inproceedings{SparseTrack,
   title={SparseTrack: Multi-Object Tracking by Performing Scene Decomposition based on Pseudo-Depth},
   author={Liu, Zelin and Wang, Xinggang and Wang, Cheng and Liu, Wenyu and Bai, Xiang},
-  journal={arXiv preprint arXiv:2306.05238}
+  journal={arXiv preprint arXiv:2306.05238},
   year={2023}
 }
 ```
