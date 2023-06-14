@@ -34,7 +34,7 @@ Exploring robust and efficient association methods has always been an important 
     
 **Notes**: 
 - All the inference experiments are performed on 1 NVIDIA GeForce RTX 3090 GPUs. 
-- Each experiment uses the same detector and model weights as [ByteTrack](https://github.com/ifzhang/ByteTrack) . 
+- Each experiment uses the **same detector and model weights** as [ByteTrack](https://github.com/ifzhang/ByteTrack) . 
 - SparseTrack relies on IoU distance association only and do not use any appearance embedding, learnable motion, and attention components.
  
 ## Installation
