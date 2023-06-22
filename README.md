@@ -46,9 +46,11 @@ This project is an implementation version of [Detectron2](https://github.com/fac
 >
 >step 2: Adding the relevant OpenCV modules in the pbcvt/CMakeLists.txt file. Here's what you should do: locate the line "find_package(OpenCV COMPONENTS REQUIRED)" in the CMakeLists.txt file and replace it with "find_package(OpenCV COMPONENTS core highgui video videoio videostab REQUIRED)".
 >
->step 3: Compiling [pbcvt](https://github.com/Algomorph/pyboostcvconverter). 
+>step 3: Modifying the compilation path in the Makefile file before compiling pbcvt. The main modifications include updating the following entries：CMAKE_SOURCE_DIR, CMAKE_BINARY_DIR, cmake_progress_start.
 >
->step 4: Please copy the "pbcvt.xxxxxx.so" file compiled via [pbcvt](https://github.com/Algomorph/pyboostcvconverter) to the **<ROOT/SparseTrack/tracker/>** directory.
+>step 4: Compiling [pbcvt](https://github.com/Algomorph/pyboostcvconverter). 
+>
+>step 5: Please copy the "pbcvt.xxxxxx.so" file compiled via [pbcvt](https://github.com/Algomorph/pyboostcvconverter) to the **<ROOT/SparseTrack/tracker/>** directory.
  
 #### Install
 ```shell
