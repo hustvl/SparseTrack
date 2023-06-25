@@ -97,7 +97,7 @@ class STrack(BaseTrack):
             multi_covariance = np.asarray([st.covariance for st in stracks])
 
             R = H[:2, :2]
-            R8x8 = np.kron(np.eye(4, dtype=float), R)# np.kron 这是一个常用的矩阵运算方法 克罗内克乘积，又简称 圈乘 
+            R8x8 = np.kron(np.eye(4, dtype=float), R)# np.kron
             t = H[:2, 2]
 
             for i, (mean, cov) in enumerate(zip(multi_mean, multi_covariance)):
