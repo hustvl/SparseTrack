@@ -167,13 +167,17 @@ CUDA_VISIBLE_DEVICES=0 python3 track.py  --num-gpus 1  --config-file mot17_ab_tr
 
 # tracking on mot20 val_half set
 CUDA_VISIBLE_DEVICES=0 python3 track.py  --num-gpus 1  --config-file mot20_ab_track_cfg.py
-
-
-# tracking on dancetrack test set
-# step 1: Please comment out line 368-373 in the [sparse_tracker.py](https://github.com/hustvl/SparseTrack/blob/main/tracker/sparse_tracker.py) and modify the threshold for low-score matching stage from 0.3 to 0.35 (at line 402 in the sparse_tracker.py).
-# step 2: Run ->
-CUDA_VISIBLE_DEVICES=0 python3 track.py  --num-gpus 1  --config-file dancetrack_sparse_cfg.py 
 ```
+
+#### Tracking on dancetrack test set
+>step 1: Please comment out line 368-373 in the [sparse_tracker.py](https://github.com/hustvl/SparseTrack/blob/main/tracker/sparse_tracker.py) and modify the threshold for low-score matching stage from 0.3 to 0.35 (at line 402 in the sparse_tracker.py).
+>
+>step 2: Running:
+```
+CUDA_VISIBLE_DEVICES=0 python3 track.py  --num-gpus 1  --config-file dancetrack_sparse_cfg.py
+```
+
+
  
 ## Citation -->
 If you find SparseTrack is useful in your research or applications, please consider giving us a star 🌟 and citing it by the following BibTeX entry.
