@@ -170,6 +170,8 @@ CUDA_VISIBLE_DEVICES=0 python3 track.py  --num-gpus 1  --config-file mot20_ab_tr
 
 
 # tracking on dancetrack test set
+# step 1: Please comment out line 368-373 in the sparse_tracker.py and modify the threshold for low-score matching stage from 0.3 to 0.35.
+# step 2: Run ->
 CUDA_VISIBLE_DEVICES=0 python3 track.py  --num-gpus 1  --config-file dancetrack_sparse_cfg.py 
 ```
  
