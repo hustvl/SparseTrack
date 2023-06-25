@@ -108,6 +108,7 @@ python3 tools/convert_mot20_to_coco.py
 python3 tools/convert_crowdhuman_to_coco.py
 python3 tools/convert_cityperson_to_coco.py
 python3 tools/convert_ethz_to_coco.py
+python3 tools/convert_dance_to_coco.py
 ```
 Creating different training mix_data:
 ```
