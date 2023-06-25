@@ -54,7 +54,7 @@ track = dict(
     val_ann = "test.json"
 )
 
-# For dancetrack--unenabled GMC: 368 - 373 in sparse_tracker.py 
+# For dancetrack--unenable GMC: 368 - 373 in sparse_tracker.py 
 # Change the thresh 0.3 to 0.35 during low-score matching 
  
  
