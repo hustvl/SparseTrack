@@ -87,9 +87,18 @@ ROOT
    |        └——————images
    |        └——————labels_with_ids
    └——————ETHZ
-            └——————eth01
-            └——————...
-            └——————eth07
+   |        └——————eth01
+   |        └——————...
+   |        └——————eth07
+   └——————dancetrack
+               └——————train
+               └——————train_seqmap.txt
+               └——————test
+               └——————test_seqmap.txt
+               └——————val
+               └——————val_seqmap.txt
+
+   
 ```
 Then, you need to turn the datasets to COCO format and mix different training data:
 ```
