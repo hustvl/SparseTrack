@@ -111,7 +111,7 @@ def do_track(cfg, model):
     model.eval()
     if cfg.track.fuse:
         logger.info("\tFusing model...")
-        model = fuse_model(model)
+        model = fuse_model(model)#
 
     # start evaluate
     evaluator.evaluate(
@@ -205,4 +205,8 @@ CUDA_VISIBLE_DEVICES=0 python3 track.py  --num-gpus 1  --config-file mot20_track
 CUDA_VISIBLE_DEVICES=0 python3 track.py  --num-gpus 1  --config-file mot17_ab_track_cfg.py 
 
 CUDA_VISIBLE_DEVICES=0 python3 track.py  --num-gpus 1  --config-file mot20_ab_track_cfg.py  
+
+CUDA_VISIBLE_DEVICES=0 python3 track.py  --num-gpus 1  --config-file dancetrack_bot_cfg.py  
+
+CUDA_VISIBLE_DEVICES=0 python3 track.py  --num-gpus 1  --config-file dancetrack_sparse_cfg.py  
 '''

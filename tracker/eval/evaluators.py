@@ -7,6 +7,7 @@ from collections import defaultdict
 from detectron2.utils import comm
 from  tracker.byte_tracker import BYTETracker
 from  tracker.sparse_tracker import SparseTracker
+from  tracker.bot_sort import BoTSORT
 logger = logging.getLogger("detectron2")
 
 def write_results(filename, results):
@@ -84,6 +85,8 @@ class MOTEvaluator:
             tracker = BYTETracker(self.args.track)
         elif self.args.track.deep:
             tracker = SparseTracker(self.args.track)
+        elif self.args.track.bot:
+            tracker = BoTSORT(self.args.track)
         timer = Timer()
         ori_thresh = self.args.track.track_thresh
         ori_track_buffer = self.args.track.track_buffer
@@ -123,6 +126,8 @@ class MOTEvaluator:
                         tracker = BYTETracker(self.args.track)
                     elif self.args.track.deep:
                         tracker = SparseTracker(self.args.track)
+                    elif self.args.track.bot:
+                        tracker = BoTSORT(self.args.track)
                     if len(results) != 0:
                         # import pdb;pdb.set_trace()
                         result_filename = os.path.join(result_folder, '{}.txt'.format(video_names[video_id - 1]))

@@ -364,7 +364,7 @@ class SparseTracker(object):
         # predict the current location with KF
         STrack.multi_predict(strack_pool)
         
-        # use GMC
+        # use GMC: for dancetrack--unenabled GMC: 368 - 373
         if self.pre_img is not None:
             warp = pbcvt.GMC(curr_img, self.pre_img, self.down_scale)
         else:
