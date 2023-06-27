@@ -52,7 +52,7 @@ This project is an implementation version of [Detectron2](https://github.com/fac
 >```
 >cmake -DPYTHON_DESIRED_VERSION=3.X  -DPYTHON3_INCLUDE_DIR=/home/lzl/miniconda3/envs/d2/include/python3.9 -DPYTHON3_NUMPY_INCLUDE_DIRS=/home/lzl/miniconda3/envs/d2/lib/python3.9/site-packages/numpy -DPYTHON3_LIBRARY=/home/lzl/miniconda3/envs/d2/lib/libpython3.9.so
 >
->
+># and then, running:
 >make 
 >```
 >
