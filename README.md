@@ -48,7 +48,8 @@ This project is an implementation version of [Detectron2](https://github.com/fac
 >
 >step 3: Modifying the compilation path in the Makefile file before compiling pbcvt. The main modifications include updating the following entries：CMAKE_SOURCE_DIR, CMAKE_BINARY_DIR, cmake_progress_start.
 >
->step 4: Compiling [pbcvt](https://github.com/Algomorph/pyboostcvconverter). 
+>step 4: Compiling [pbcvt](https://github.com/Algomorph/pyboostcvconverter). Running:
+>        cmake -DPYTHON_DESIRED_VERSION=3.X  -DPYTHON3_INCLUDE_DIR=/home/lzl/miniconda3/envs/d2/include/python3.9 -DPYTHON3_NUMPY_INCLUDE_DIRS=/home/lzl/miniconda3/envs/d2/lib/python3.9/site-packages/numpy -DPYTHON3_LIBRARY=/home/lzl/miniconda3/envs/d2/lib/libpython3.9.so 
 >
 >step 5: Please copy the "pbcvt.xxxxxx.so" file compiled via [pbcvt](https://github.com/Algomorph/pyboostcvconverter) to the **<ROOT/SparseTrack/tracker/>** directory.
  
