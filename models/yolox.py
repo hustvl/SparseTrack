@@ -44,7 +44,7 @@ class YOLOX(nn.Module):
             return outputs
         else:
             ori_image_sizes, input_image_sizes, input_images = self._batch_data_prerocess(batch_data)
-            fpn_outs = self.backbone(torch.stack(input_images))
+            fpn_outs = self.backbone(torch.stack(input_images).to(self.device))
             batch_outputs = self.head(fpn_outs)
             batch_outputs = postprocess(batch_outputs, self.head.num_classes, self.confthre, self.nmsthre)
             
