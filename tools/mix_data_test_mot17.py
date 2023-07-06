@@ -18,9 +18,9 @@ category_list = mot_json['categories']
 
 print('mot17')
 
-max_img = 1000000
-max_ann = 1000000000
-max_video = 30
+max_img = 10000
+max_ann = 2000000
+max_video = 10
 
 crowdhuman_json = json.load(open('/data/zelinliu/crowdhuman/annotations/train.json','r'))
 img_id_count = 0
@@ -47,8 +47,8 @@ video_list.append({
 })
 
 
-max_img = 100000000
-max_ann = 1000000000000
+max_img = 30000
+max_ann = 10000000
 
 crowdhuman_val_json = json.load(open('/data/zelinliu/crowdhuman/annotations/val.json','r'))
 img_id_count = 0
@@ -74,8 +74,8 @@ video_list.append({
     'file_name': 'crowdhuman_val'
 })
 
-max_img = 10000000000
-max_ann = 1000000000000000
+max_img = 40000
+max_ann = 20000000
 
 ethz_json = json.load(open('/data/zelinliu/ETHZ/annotations/train.json','r'))
 img_id_count = 0
@@ -101,8 +101,8 @@ video_list.append({
     'file_name': 'ethz'
 })
 
-max_img = 1000000000000
-max_ann = 1000000000000000000
+max_img = 50000
+max_ann = 25000000
 
 cp_json = json.load(open('/data/zelinliu/Citypersons/annotations/train.json','r'))
 img_id_count = 0
