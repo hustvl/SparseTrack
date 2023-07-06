@@ -53,7 +53,7 @@ lr_cfg = dict(
     train_batch_size = 16,
     basic_lr_per_img = 0.001 / 64.0,
     scheduler_name = "yoloxwarmcos",
-    iters_per_epoch = 2493,
+    iters_per_epoch = 1828,
     max_eps = 80,
     num_warmup_eps = 1,
     warmup_lr_start = 0,
@@ -61,12 +61,12 @@ lr_cfg = dict(
     min_lr_ratio = 0.05
 )
 
-# bs = 16,  1eps = 2493 iter   
+# bs = 16,  1eps = 1828 iter   
 # build trainer
 train = dict(
     output_dir="./yolox_mix17",
     init_checkpoint="/data/zelinliu/sparsetrack/pretrain/yolox_x.pth",
-    max_iter = 2493 * 80 ,
+    max_iter = 1828 * 80 ,
     start_iter = 0,
     seed = 0,
     random_size = (18, 32), 
@@ -83,8 +83,8 @@ train = dict(
         device = "cuda",
         after_backward = False
     ),
-    checkpointer=dict(period=2493 * 2, max_to_keep=5),  # options for PeriodicCheckpointer
-    eval_period = 2493 * 2,
+    checkpointer=dict(period=1828 * 2, max_to_keep=5),  # options for PeriodicCheckpointer
+    eval_period = 1828 * 2,
     log_period = 20,
     device="cuda"
 )
