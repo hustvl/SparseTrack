@@ -15,8 +15,8 @@ for ann in mot_json['annotations']:
 video_list = mot_json['videos']
 category_list = mot_json['categories']
 
-max_img = 1000000
-max_ann = 1000000000
+max_img = 10000
+max_ann = 2000000
 max_video = 10
 
 crowdhuman_json = json.load(open('/data/zelinliu/crowdhuman/annotations/train.json','r'))
@@ -42,8 +42,8 @@ video_list.append({
 })
 
 
-max_img = 100000000
-max_ann = 1000000000000
+max_img = 30000
+max_ann = 10000000
 
 crowdhuman_val_json = json.load(open('/data/zelinliu/crowdhuman/annotations/val.json','r'))
 img_id_count = 0
