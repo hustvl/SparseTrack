@@ -3,6 +3,10 @@
 
 **Here includes the implementation of the [Detectron2](https://github.com/facebookresearch/detectron2) version of YOLOv8 detector and its usage in SparseTrack for tracking.**
 
+## Copmlie GMC
+
+You can refer to [complie GMC](https://github.com/hustvl/SparseTrack#compile-gmcgloble-motion-compensation-module).
+
 ## Usage
 ```shell
 git clone -b v8 https://github.com/hustvl/SparseTrack.git
