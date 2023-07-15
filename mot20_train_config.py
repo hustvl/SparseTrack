@@ -74,7 +74,7 @@ lr_cfg = dict(
 # bs = 16,  1eps = 1769 iter   
 # build trainer
 train = dict(
-    output_dir="./yolov8_mix17",
+    output_dir="./yolov8_mix20",
     init_checkpoint="",
     max_iter = 1769 * 80 ,
     start_iter = 0,
