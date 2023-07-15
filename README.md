@@ -104,10 +104,6 @@ All tracking experimental scripts are run in the following manner. You first pla
 ```
 # tracking on mot17 train set or test set
 CUDA_VISIBLE_DEVICES=0 python3 track.py  --num-gpus 1  --config-file mot17_track_cfg.py 
-
-
-# tracking on mot20 train set or test set
-CUDA_VISIBLE_DEVICES=0 python3 track.py  --num-gpus 1  --config-file mot20_track_cfg.py 
 ```
 
 ## Citation -->
