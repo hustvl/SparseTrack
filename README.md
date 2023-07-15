@@ -1,5 +1,5 @@
 # SparseTrack
-####  SparseTrack integrated with the YOLOv8 detector. 
+####  SparseTrack integrated with the [YOLOv8](https://github.com/ultralytics/ultralytics) detector. 
 
 **Here includes the implementation of the [Detectron2](https://github.com/facebookresearch/detectron2) version of YOLOv8 detector and its usage in SparseTrack for tracking.**
 
