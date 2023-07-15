@@ -35,7 +35,7 @@ dataloader.evaluator = L(build_evaluator)(
  
 # build model
 model = L(DetectionModel)(
-    cfg='yolov8l.yaml',  
+    cfg='yolov8l.yaml',  # you can use yolov8n.yaml or yolov8m.yaml etc.
     ch=3,  
     nc=1,  
     cls_idx = [0,], 
