@@ -140,7 +140,8 @@ events.out.tfevents*
 pretrained
 
 pretrain/
-yolox_mix17*/
-yolox_mix20*/
-yolox_dance*/
-yolox_bot*/
+yolov8_mix17*/
+yolov8_mix20*/
+test_output/
+*.json
+scripy_*

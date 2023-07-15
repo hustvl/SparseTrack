@@ -15,9 +15,9 @@ class MosaicClose(HookBase):
             self._logger.info("--->No mosaic aug now!")
             self._trainer.data_loader.dataset.enable_mosaic = False
             self._trainer.data_loader.close_mosaic()
-            self._logger.info("--->Add additional L1 loss now!")
-            if self.is_distributed:
-                self._trainer.model.module.head.use_l1 = True
-            else:
-                self._trainer.model.head.use_l1 = True
+            # self._logger.info("--->Add additional L1 loss now!") 为什么不用L1损失的原因是 ： 容易对数据集过拟合
+            # if self.is_distributed:
+            #     self._trainer.model.module.head.use_l1 = True
+            # else:
+            #     self._trainer.model.head.use_l1 = True
     

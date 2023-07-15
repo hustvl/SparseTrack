@@ -17,11 +17,11 @@ from detectron2.utils.collect_env import collect_env_info
 from detectron2.checkpoint import DetectionCheckpointer
 from detectron2.engine import (
     launch,
-    default_argument_parser,
+    default_argument_parser
 )
 
 from utils import ema 
-from utils.model_utils import fuse_model
+# from utils.model_utils import fuse_model
 from tracker.eval.evaluators import MOTEvaluator
 from register_data import *
 
@@ -85,7 +85,7 @@ def default_track_setup(cfg, args):
             LazyConfig.save(cfg, path)
         logger.info("Full config saved to {}".format(path))
     
-    
+ 
 def do_track(cfg, model):
     logger = logging.getLogger("detectron2")
     if cfg.train.model_ema.enabled and cfg.train.model_ema.use_ema_weights_for_eval_only:
@@ -111,7 +111,7 @@ def do_track(cfg, model):
     model.eval()
     if cfg.track.fuse:
         logger.info("\tFusing model...")
-        model = fuse_model(model)#
+        model = model.fuse()
 
     # start evaluate
     evaluator.evaluate(
@@ -205,8 +205,4 @@ CUDA_VISIBLE_DEVICES=0 python3 track.py  --num-gpus 1  --config-file mot20_track
 CUDA_VISIBLE_DEVICES=0 python3 track.py  --num-gpus 1  --config-file mot17_ab_track_cfg.py 
 
 CUDA_VISIBLE_DEVICES=0 python3 track.py  --num-gpus 1  --config-file mot20_ab_track_cfg.py  
-
-CUDA_VISIBLE_DEVICES=0 python3 track.py  --num-gpus 1  --config-file dancetrack_bot_cfg.py  
-
-CUDA_VISIBLE_DEVICES=0 python3 track.py  --num-gpus 1  --config-file dancetrack_sparse_cfg.py  
 '''

@@ -128,4 +128,4 @@ class MOTDataset(Dataset):
 
         if self.preproc is not None:
             img, target = self.preproc(img, target, self.input_dim)
-        return img, target, img_info, img_id #, img0
+        return img, target, img_info, img_id

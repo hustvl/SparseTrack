@@ -7,7 +7,7 @@ import cv2
 # Use the same script for MOT16
 DATA_PATH = '/data/zelinliu/MOT20'
 OUT_PATH = os.path.join(DATA_PATH, 'annotations')
-SPLITS = ['train', 'train_half', 'val_half', 'test']  # --> split training data to train_half and val_half.
+SPLITS = ['train_half', 'val_half', 'train', 'test']  # --> split training data to train_half and val_half.
 HALF_VIDEO = True
 CREATE_SPLITTED_ANN = True
 CREATE_SPLITTED_DET = True

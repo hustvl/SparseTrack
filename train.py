@@ -38,8 +38,6 @@ from register_data import *
 logger = logging.getLogger("detectron2")
 
 def do_test(cfg, model, eval_only=False):
-    logger = logging.getLogger("detectron2")
-
     if eval_only:
         logger.info("Run evaluation under eval-only mode")
         if cfg.train.model_ema.enabled and cfg.train.model_ema.use_ema_weights_for_eval_only:
@@ -92,11 +90,11 @@ def do_train(args, cfg):
                 ddp (dict)
     """
     model = instantiate(cfg.model)
-    logger = logging.getLogger("detectron2")
     logger.info("Model:\n{}".format(model))
     model.to(cfg.train.device)
     model.device = torch.device(cfg.train.device)
     cfg.optimizer.model = model
+    # import pdb;pdb.set_trace()
     optim = instantiate(cfg.optimizer)
 
     train_loader = instantiate(cfg.dataloader.train)

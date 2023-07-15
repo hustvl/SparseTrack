@@ -5,7 +5,6 @@ import os.path as osp
 import copy
 import torch
 import torch.nn.functional as F
-from tracker import pbcvt 
 from .kalman_filter import KalmanFilter
 from .matching import *
 from .basetrack import BaseTrack, TrackState
@@ -97,7 +96,7 @@ class STrack(BaseTrack):
             multi_covariance = np.asarray([st.covariance for st in stracks])
 
             R = H[:2, :2]
-            R8x8 = np.kron(np.eye(4, dtype=float), R)# np.kron
+            R8x8 = np.kron(np.eye(4, dtype=float), R)# np.kron 这是一个常用的矩阵运算方法 克罗内克乘积，又简称 圈乘 
             t = H[:2, 2]
 
             for i, (mean, cov) in enumerate(zip(multi_mean, multi_covariance)):

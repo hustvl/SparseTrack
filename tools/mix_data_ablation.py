@@ -77,4 +77,4 @@ mix_json['images'] = img_list
 mix_json['annotations'] = ann_list
 mix_json['videos'] = video_list
 mix_json['categories'] = category_list
-json.dump(mix_json, open('/data/zelinliu/sparsetrack/mix/ablation_17/annotations/train.json','w'))
+json.dump(mix_json, open('/data/zelinliu/yolov8/mix/ablation_17/annotations/train.json','w'))

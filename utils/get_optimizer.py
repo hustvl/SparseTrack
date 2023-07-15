@@ -1,5 +1,7 @@
-import torch
+import torch, logging
 import torch.nn as nn
+import torch.optim as optim
+LOGGER = logging.getLogger("detectron2")
 
 def get_optimizer(batch_size, basic_lr_per_img, model, momentum, weight_decay, warmup_epochs, warmup_lr_start):
  
@@ -11,6 +13,7 @@ def get_optimizer(batch_size, basic_lr_per_img, model, momentum, weight_decay, w
     pg0, pg1, pg2 = [], [], []  # optimizer parameter groups
 
     for k, v in model.named_modules():
+        # import pdb;pdb.set_trace()
         if hasattr(v, "bias") and isinstance(v.bias, nn.Parameter):
             pg2.append(v.bias)  # biases
         if isinstance(v, nn.BatchNorm2d) or "bn" in k:

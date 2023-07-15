@@ -12,9 +12,7 @@ import os, torch
 # test data cfg
 opt = get_cfg()
 opt.DATASETS.TEST = ("my_val",)
-opt.OUTPUT_DIR = "./yolox_mix17"
-opt.DATALOADER.NUM_WORKERS = 4
-opt.TEST.DETECTIONS_PER_IMAGE = 1200
+opt.OUTPUT_DIR = "./test_output"
 
     
 def build_train_loader(
@@ -79,7 +77,7 @@ def build_train_loader(
 
     return train_loader
 
-def build_test_loader(test_size, infer_batch = 1):
+def build_test_loader(test_size, infer_batch = 1,  test_num_workers = 4,  max_dets = 1000):
     """
     Returns:
         iterable
@@ -89,6 +87,9 @@ def build_test_loader(test_size, infer_batch = 1):
     """
     from datasets.mot_mapper import MOTtestMapper
     from datasets.data import ValTransform
+    
+    opt.DATALOADER.NUM_WORKERS = test_num_workers
+    opt.TEST.DETECTIONS_PER_IMAGE = max_dets
    
     print(" building val loader ...")
     mapper = MOTtestMapper(
@@ -100,7 +101,7 @@ def build_test_loader(test_size, infer_batch = 1):
     )
     return build_detection_test_loader(opt, dataset_name = opt.DATASETS.TEST[0], mapper=mapper, batch_size = infer_batch)
 
-def build_evaluator(output_folder=None):
+def build_evaluator(output_folder=None,  max_dets = 1000):
     """
     Create evaluator(s) for a given dataset.
     This uses the special metadata "evaluator_type" associated with each builtin dataset.
@@ -108,6 +109,8 @@ def build_evaluator(output_folder=None):
     script and do not have to worry about the hacky if-else logic here.
     """
     print(" building val evaluator ...")
+    opt.TEST.DETECTIONS_PER_IMAGE = max_dets
+    
     if output_folder is None:
         output_folder = os.path.join(opt.OUTPUT_DIR, "inference")
     return COCOEvaluator(opt.DATASETS.TEST[0], output_dir=output_folder)

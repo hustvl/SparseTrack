@@ -205,11 +205,6 @@ class SparseTracker(object):
 
         self.frame_id = 0
         self.args = args
- 
-        if '_half.json' in args.val_ann:
-            self.det_thresh = args.track_thresh + 0.1
-        else:
-            self.det_thresh = args.track_thresh + 0.05
             
         self.pre_img = None
         self.buffer_size = int(frame_rate / 30.0 * args.track_buffer)
@@ -399,7 +394,7 @@ class SparseTracker(object):
                                                                                 activated_starcks, 
                                                                                 refind_stracks, 
                                                                                 self.args.depth_levels_low, 
-                                                                                0.3, 
+                                                                                0.35, 
                                                                                 is_fuse=False) 
         for track in u_strack:
             if not track.state == TrackState.Lost:
@@ -424,8 +419,6 @@ class SparseTracker(object):
         """ Step 4: Init new stracks"""
         for inew in u_detection:
             track = detections[inew]
-            if track.score < self.det_thresh:
-                continue
             track.activate(self.kalman_filter, self.frame_id)
             activated_starcks.append(track)
         """ Step 5: Update state"""
@@ -443,7 +436,7 @@ class SparseTracker(object):
         self.lost_stracks.extend(lost_stracks)
         self.lost_stracks = sub_stracks(self.lost_stracks, self.removed_stracks)
         self.removed_stracks.extend(removed_stracks)
-        self.tracked_stracks, self.lost_stracks = remove_duplicate_stracks(self.tracked_stracks, self.lost_stracks)
+        # self.tracked_stracks, self.lost_stracks = remove_duplicate_stracks(self.tracked_stracks, self.lost_stracks)
         # get scores of lost tracks
         output_stracks = [track for track in self.tracked_stracks if track.is_activated]
         self.pre_img = curr_img
@@ -474,17 +467,17 @@ def sub_stracks(tlista, tlistb):
     return list(stracks.values())
 
 
-def remove_duplicate_stracks(stracksa, stracksb):
-    pdist = iou_distance(stracksa, stracksb)
-    pairs = np.where(pdist < 0.15)
-    dupa, dupb = list(), list()
-    for p, q in zip(*pairs):
-        timep = stracksa[p].frame_id - stracksa[p].start_frame
-        timeq = stracksb[q].frame_id - stracksb[q].start_frame
-        if timep > timeq:
-            dupb.append(q)
-        else:
-            dupa.append(p)
-    resa = [t for i, t in enumerate(stracksa) if not i in dupa]
-    resb = [t for i, t in enumerate(stracksb) if not i in dupb]
-    return resa, resb
+# def remove_duplicate_stracks(stracksa, stracksb):
+#     pdist = iou_distance(stracksa, stracksb)
+#     pairs = np.where(pdist < 0.15)
+#     dupa, dupb = list(), list()
+#     for p, q in zip(*pairs):
+#         timep = stracksa[p].frame_id - stracksa[p].start_frame
+#         timeq = stracksb[q].frame_id - stracksb[q].start_frame
+#         if timep > timeq:
+#             dupb.append(q)
+#         else:
+#             dupa.append(p)
+#     resa = [t for i, t in enumerate(stracksa) if not i in dupa]
+#     resb = [t for i, t in enumerate(stracksb) if not i in dupb]
+#     return resa, resb

@@ -1,10 +1,9 @@
 import os
 import torch
-import logging, tqdm
+import logging
 import numpy as np
 from .timer import Timer
 from collections import defaultdict
-from detectron2.utils import comm
 from  tracker.byte_tracker import BYTETracker
 from  tracker.sparse_tracker import SparseTracker
 from  tracker.bot_sort import BoTSORT
@@ -79,7 +78,6 @@ class MOTEvaluator:
         results = []
         timer_avgs, timer_calls = [], []
         video_names = defaultdict()
-        progress_bar = tqdm if comm.is_main_process() else iter
         
         if self.args.track.byte:
             tracker = BYTETracker(self.args.track)
@@ -93,13 +91,11 @@ class MOTEvaluator:
         video_id = 0
 
         for cur_iter, batch_data in enumerate(
-            progress_bar.tqdm(self.dataloader)
+           self.dataloader
         ):
             with torch.no_grad():
                 # init tracker  
                 frame_id = int(batch_data[0]["frame_id"])
-                if frame_id == 1:
-                    video_id += 1 
                 img_file_name = batch_data[0]["file_name"]
                 video_name = img_file_name.split('/')[-3]
                 
@@ -110,15 +106,17 @@ class MOTEvaluator:
                 else:
                     self.args.track.track_buffer = ori_track_buffer
                 
-                if 'MOT17-06-' in video_name:
-                    self.args.track.track_thresh = 0.65
-                elif 'MOT17-12-' in video_name:
-                    self.args.track.track_thresh = 0.7
+                # if 'MOT17-06-' in video_name:
+                #     self.args.track.track_thresh = 0.65
+                if 'MOT17-12-' in video_name:
+                    self.args.track.track_thresh = 0.6
                 elif video_name in ['MOT20-06', 'MOT20-08']:
                     self.args.track.track_thresh = 0.27
                 else:
                     self.args.track.track_thresh = ori_thresh
-                    
+
+                if frame_id == 1:
+                    video_id += 1 
                 if video_name not in video_names:
                     video_names[video_id] = video_name
                 if frame_id == 1:
@@ -136,15 +134,13 @@ class MOTEvaluator:
                     timer_avgs.append(timer.average_time)
                     timer_calls.append(timer.calls)
                     timer.clear()
-                
-                if 'MOT17-06-' in video_name:
-                    tracker.down_scale = 2  
+                 
                 if 'MOT17-01-' in video_name:
                     tracker.layers = 2
                 
                 # run model
-                timer.tic()
                 batch_data[0]["image"] = batch_data[0]["image"].type(tensor_type)  
+                timer.tic()
                 outputs = model(batch_data)  
                     
             # run tracking
@@ -159,15 +155,15 @@ class MOTEvaluator:
                     tlwh = t.tlwh
                     tid = t.track_id
                     vertical = tlwh[2] / tlwh[3] > 1.6
-                    if tlwh[2] * tlwh[3] > self.args.track.min_box_area and not vertical:
+                    if tlwh[2] * tlwh[3] > self.args.track.min_box_area: #and not vertical
                         online_tlwhs.append(tlwh)
                         online_ids.append(tid)
                         online_scores.append(t.score)
                 # save results
                 results.append((frame_id, online_tlwhs, online_ids, online_scores))
             timer.toc() 
-            # if frame_id % 20 == 0:
-            #     logger.info('Processing frame {} ({:.2f} fps)'.format(frame_id, 1. / max(1e-5, timer.average_time)))
+            if frame_id % 20 == 0:
+                logger.info('Processing frame {} ({:.2f} fps)'.format(frame_id, 1. / max(1e-5, timer.average_time)))
             if cur_iter == len(self.dataloader) - 1:
                 result_filename = os.path.join(result_folder, '{}.txt'.format(video_names[video_id]))
                 write_results(result_filename, results) 
