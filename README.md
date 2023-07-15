@@ -117,3 +117,7 @@ If you find SparseTrack is useful in your research or applications, please consi
 }
 ```
 
+## Acknowledgements
+A large part of the code is borrowed from [YOLOX](https://github.com/Megvii-BaseDetection/YOLOX), [FairMOT](https://github.com/ifzhang/FairMOT), [ByteTrack](https://github.com/ifzhang/ByteTrack), [BoT-SORT](https://github.com/NirAharon/BOT-SORT), [Detectron2](https://github.com/facebookresearch/detectron2), [YOLOV8](https://github.com/ultralytics/ultralytics).
+ Many thanks for their wonderful works.
+
