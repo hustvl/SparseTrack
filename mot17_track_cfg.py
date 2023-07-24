@@ -9,7 +9,7 @@ dataloader.test = L(build_test_loader)(
     test_size = (800, 1440),
     infer_batch = 1,
     test_num_workers  = 4,
-    max_dets = 1000
+    max_dets = 600
 )
  
 # build model
@@ -19,10 +19,10 @@ model = L(DetectionModel)(
     nc=1,  
     cls_idx = [0,], 
     conf=0.01, 
-    iou=0.75, 
+    iou=0.7, 
     agnostic=False, 
     multi_label=False, 
-    num_max_dets=1000, 
+    num_max_dets=600, 
     verbose=True
 )
 
