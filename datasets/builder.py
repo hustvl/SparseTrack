@@ -14,7 +14,7 @@ opt = get_cfg()
 opt.DATASETS.TEST = ("my_val",)
 opt.OUTPUT_DIR = "./yolox_mix17"
 opt.DATALOADER.NUM_WORKERS = 4
-opt.TEST.DETECTIONS_PER_IMAGE = 1200
+opt.TEST.DETECTIONS_PER_IMAGE = 600
 
     
 def build_train_loader(
