@@ -26,11 +26,11 @@ dataloader.test = L(build_test_loader)(
     test_size = (896, 1600),
     infer_batch = 4,
     test_num_workers  = 4,
-    max_dets = 1000
+    max_dets = 600
 )
 dataloader.evaluator = L(build_evaluator)(
     output_folder  = None,
-    max_dets = 1000
+    max_dets = 600
 )
  
 # build model
@@ -43,7 +43,7 @@ model = L(DetectionModel)(
     iou=0.7, 
     agnostic=False, 
     multi_label=False, 
-    num_max_dets=1000, 
+    num_max_dets=600, 
     verbose=True
 )
  
