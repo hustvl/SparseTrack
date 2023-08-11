@@ -3,6 +3,13 @@
 
 **Here includes the implementation of the [Detectron2](https://github.com/facebookresearch/detectron2) version of YOLOv8 detector and its usage in SparseTrack for tracking.**
 
+## Tracking performance
+### Results on MOT challenge test set with yolov8_l detector
+| Dataset    | HOTA | MOTA | IDF1 | MT | ML | FP | FN | IDs |
+|------------|-------|-------|------|------|-------|-------|------|------|
+|MOT17       | 65.5 | 80.0 | 79.7 | 53.2% | 14.4% | 24678 | 87150 | 1098 |
+
+
 ## Copmlie GMC
 
 You can refer to [complie GMC](https://github.com/hustvl/SparseTrack#compile-gmcgloble-motion-compensation-module).
