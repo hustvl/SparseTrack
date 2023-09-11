@@ -165,7 +165,7 @@ def do_track(cfg, model):
 
     metrics = mm.metrics.motchallenge_metrics + ['num_objects']
     summary = mh.compute_many(accs, names=names, metrics=metrics, generate_overall=True)
-    print(mm.io.render_summary(summary, formatters=mh.formatters, namemap=mm.io.motchallenge_metric_names))
+    logger.info('\n'+mm.io.render_summary(summary, formatters=mh.formatters, namemap=mm.io.motchallenge_metric_names))
     logger.info('Completed')
 
 
