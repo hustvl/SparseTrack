@@ -7,6 +7,8 @@
 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/sparsetrack-multi-object-tracking-by/multi-object-tracking-on-mot17)](https://paperswithcode.com/sota/multi-object-tracking-on-mot17?p=sparsetrack-multi-object-tracking-by)
 
+[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/sparsetrack-multi-object-tracking-by/multi-object-tracking-on-dancetrack)](https://paperswithcode.com/sota/multi-object-tracking-on-dancetrack?p=sparsetrack-multi-object-tracking-by)
+
 > [**SparseTrack: Multi-Object Tracking by Performing Scene Decomposition based on Pseudo-Depth**](https://arxiv.org/abs/2306.05238)
 > 
 > Zelin Liu, Xinggang Wang, Cheng Wang, Wenyu Liu, Xiang Bai
