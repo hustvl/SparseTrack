@@ -142,5 +142,5 @@ if __name__ == "__main__":
         args=(args,),
     )
 '''
-CUDA_VISIBLE_DEVICES=0 python track.py  --num-gpus 1  --config-file demo_track_cfg.py  
+CUDA_VISIBLE_DEVICES=0 python demo.py  --num-gpus 1  --config-file demo_track_cfg.py  
 '''
