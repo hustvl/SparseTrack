@@ -46,7 +46,7 @@ Exploring robust and efficient association methods has always been an important 
 #### Dependence
 This project is an implementation version of [Detectron2](https://github.com/facebookresearch/detectron2) and requires the compilation of [OpenCV](https://opencv.org/), [Boost](https://www.boost.org).
 
-Version Information: OpenCV-4.6.0, Boost-1.74.0, pip install torch == 1.9.1+cu111 torchvision==0.10.1+cu111 torchaudio==0.9.1, Python 3.9.16 
+Version Information: OpenCV-4.6.0, Boost-1.74.0, pip install torch == 1.9.1+cu111 torchvision==0.10.1+cu111 torchaudio==0.9.1, Python 3.9.16. 
 
 #### Compile GMC(Globle Motion Compensation) module
 >step 1: Downloading [pbcvt](https://github.com/Algomorph/pyboostcvconverter), copy the [python_module.cpp](https://github.com/hustvl/SparseTrack/blob/main/python_module.cpp) to the path **<[pbcvt](https://github.com/Algomorph/pyboostcvconverter)/src/>**.
