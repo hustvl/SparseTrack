@@ -98,22 +98,6 @@ class MOTEvaluator:
                 frame_id = int(batch_data[0]["frame_id"])
                 img_file_name = batch_data[0]["file_name"]
                 video_name = img_file_name.split('/')[-3]
-                
-                if 'MOT17-05-' in video_name  or 'MOT17-06-' in video_name:
-                    self.args.track.track_buffer = 14
-                elif 'MOT17-13-' in video_name:
-                    self.args.track.track_buffer = 25
-                else:
-                    self.args.track.track_buffer = ori_track_buffer
-                
-                # if 'MOT17-06-' in video_name:
-                #     self.args.track.track_thresh = 0.65
-                if 'MOT17-12-' in video_name:
-                    self.args.track.track_thresh = 0.6
-                elif video_name in ['MOT20-06', 'MOT20-08']:
-                    self.args.track.track_thresh = 0.27
-                else:
-                    self.args.track.track_thresh = ori_thresh
 
                 if frame_id == 1:
                     video_id += 1 
