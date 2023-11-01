@@ -155,7 +155,7 @@ class MOTEvaluator:
                     tlwh = t.tlwh
                     tid = t.track_id
                     vertical = tlwh[2] / tlwh[3] > 1.6
-                    if tlwh[2] * tlwh[3] > self.args.track.min_box_area: #and not vertical
+                    if tlwh[2] * tlwh[3] > self.args.track.min_box_area and not vertical:
                         online_tlwhs.append(tlwh)
                         online_ids.append(tid)
                         online_scores.append(t.score)
