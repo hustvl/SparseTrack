@@ -394,7 +394,7 @@ class SparseTracker(object):
                                                                                 activated_starcks, 
                                                                                 refind_stracks, 
                                                                                 self.args.depth_levels_low, 
-                                                                                0.35, 
+                                                                                0.3, 
                                                                                 is_fuse=False) 
         for track in u_strack:
             if not track.state == TrackState.Lost:
