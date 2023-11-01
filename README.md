@@ -7,7 +7,7 @@
 ### Results on MOT challenge test set with yolov8_l detector
 | Dataset    | HOTA | MOTA | IDF1 | MT | ML | FP | FN | IDs | FPS |
 |------------|-------|-------|------|------|-------|-------|------|------|-----|
-|MOT17       | 65.5 | 80.0 | 79.7 | 53.2% | 14.4% | 24678 | 87150 | 1098 | 32  |
+|MOT17       | 65.7 | 80.0 | 79.9 | 53.0% | 14.5% | 24327 | 87297 | 1095 | 32  |
 
 
 ## Copmlie GMC
