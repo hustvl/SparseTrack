@@ -17,7 +17,7 @@
 
 
 ## News
-- Add yolov8 detector for tracking, please refer to branch v8.
+- Add yolov8 detector for tracking (the implementation of detectron2 version), please refer to branch v8.
 - The experimental part of paper is still undergoing further proofreading, and the currently uploaded paper is not the final version.
 
 ## Abstract
