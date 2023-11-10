@@ -146,7 +146,10 @@ See [ByteTrack.model_zoo](https://github.com/ifzhang/ByteTrack#model-zoo). We us
 
 Additionally, we conducted joint training on MOT20 train half and Crowdhuman, and evaluated on MOT20 val half. The model as follows: [yolox_x_mot20_ablation](https://drive.google.com/file/d/1F2XwyYKj1kefLPUFRHxgnpaAmEwyoocw/view?usp=drive_link)
 
-The model trained on DanceTrack can be available at google:[yolox_x_dancetrack](https://drive.google.com/drive/folders/1-uxcNTi7dhuDNGC5MmzXyllLzmVbzXay?usp=sharing) or baidu: [yolox_x_dancetrack](https://pan.baidu.com/s/1FIIy9mKnNQQrI7ACCAKRjQ), the extracted key as: sptk
+The model trained on DanceTrack can be available at :
+- google [yolox_x_dancetrack](https://drive.google.com/drive/folders/1-uxcNTi7dhuDNGC5MmzXyllLzmVbzXay?usp=sharing) 
+- baidu: [yolox_x_dancetrack](https://pan.baidu.com/s/1FIIy9mKnNQQrI7ACCAKRjQ), the extracted key as: sptk 
+- [DanceTrack](https://drive.google.com/drive/folders/1ASZCFpPEfSOJRktR8qQ_ZoT9nZR0hOea?usp=sharing)
 
 
 ## Training
