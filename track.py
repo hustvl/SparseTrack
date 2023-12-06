@@ -18,6 +18,7 @@ from detectron2.checkpoint import DetectionCheckpointer
 from detectron2.engine import (
     launch,
     default_argument_parser,
+    default_setup
 )
 
 from utils import ema 
@@ -41,51 +42,6 @@ def compare_dataframes(gts, ts):
     return accs, names
 
 
-def default_track_setup(cfg, args):
-    """
-    Perform some basic common setups at the beginning of a job, including:
-
-    1. Set up the detectron2 logger
-    2. Log basic information about environment, cmdline arguments, and config
-    3. Backup the config to the output directory
-
-    Args:
-        cfg (CfgNode or omegaconf.DictConfig): the full config to be used
-        args (argparse.NameSpace): the command line arguments to be logged
-    """
-    output_dir = _try_get_key(cfg, "OUTPUT_DIR", "output_dir", "train.output_dir")
-    if comm.is_main_process() and output_dir:
-        PathManager.mkdirs(output_dir)
-
-    rank = comm.get_rank()
-    setup_logger(output_dir, distributed_rank=rank, name="fvcore")
-    logger = setup_logger(output_dir, distributed_rank=rank)
-
-    logger.info("Rank of current process: {}. World size: {}".format(rank, comm.get_world_size()))
-    logger.info("Environment info:\n" + collect_env_info())
-
-    logger.info("Command line arguments: " + str(args))
-    if hasattr(args, "config_file") and args.config_file != "":
-        logger.info(
-            "Contents of args.config_file={}:\n{}".format(
-                args.config_file,
-                _highlight(PathManager.open(args.config_file, "r").read(), args.config_file),
-            )
-        )
-
-    if comm.is_main_process() and output_dir:
-        # Note: some of our scripts may expect the existence of
-        # config.yaml in output directory
-        path = os.path.join(output_dir, "config.yaml")
-        if isinstance(cfg, CfgNode):
-            logger.info("Running with full config:\n{}".format(_highlight(cfg.dump(), ".yaml")))
-            with PathManager.open(path, "w") as f:
-                f.write(cfg.dump())
-        else:
-            LazyConfig.save(cfg, path)
-        logger.info("Full config saved to {}".format(path))
-    
-    
 def do_track(cfg, model):
     logger = logging.getLogger("detectron2")
     if cfg.train.model_ema.enabled and cfg.train.model_ema.use_ema_weights_for_eval_only:
@@ -127,9 +83,9 @@ def do_track(cfg, model):
         gt_type = ''
     print('gt_type', gt_type)
     if cfg.track.mot20:
-        gtfiles = glob.glob(os.path.join('/data/zelinliu/MOT20/train', '*/gt/gt{}.txt'.format(gt_type)))
+        gtfiles = glob.glob(os.path.join('../MOT20/train', '*/gt/gt{}.txt'.format(gt_type)))
     else:
-        gtfiles = glob.glob(os.path.join('/data/zelinliu/MOT17/train', '*/gt/gt{}.txt'.format(gt_type)))
+        gtfiles = glob.glob(os.path.join('../MOT17/train', '*/gt/gt{}.txt'.format(gt_type)))
     print('gt_files', gtfiles)
     tsfiles = [f for f in glob.glob(os.path.join(results_folder, '*.txt')) if not os.path.basename(f).startswith('eval')]
 
@@ -172,7 +128,7 @@ def do_track(cfg, model):
 def main(args):
     cfg = LazyConfig.load(args.config_file)
     cfg = LazyConfig.apply_overrides(cfg, args.opts)
-    default_track_setup(cfg, args)
+    default_setup(cfg, args)
     
     model = instantiate(cfg.model)
     model.to(cfg.train.device)

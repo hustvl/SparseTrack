@@ -364,7 +364,7 @@ class SparseTracker(object):
         # predict the current location with KF
         STrack.multi_predict(strack_pool)
         
-        # use GMC: for dancetrack--unenabled GMC: 368 - 373
+        # use GMC: for mot20 dancetrack--unenabled GMC: 368 - 373
         if self.pre_img is not None:
             warp = pbcvt.GMC(curr_img, self.pre_img, self.down_scale)
         else:
@@ -443,7 +443,6 @@ class SparseTracker(object):
         self.lost_stracks.extend(lost_stracks)
         self.lost_stracks = sub_stracks(self.lost_stracks, self.removed_stracks)
         self.removed_stracks.extend(removed_stracks)
-        self.tracked_stracks, self.lost_stracks = remove_duplicate_stracks(self.tracked_stracks, self.lost_stracks)
         # get scores of lost tracks
         output_stracks = [track for track in self.tracked_stracks if track.is_activated]
         self.pre_img = curr_img
@@ -472,19 +471,3 @@ def sub_stracks(tlista, tlistb):
         if stracks.get(tid, 0):
             del stracks[tid]
     return list(stracks.values())
-
-
-def remove_duplicate_stracks(stracksa, stracksb):
-    pdist = iou_distance(stracksa, stracksb)
-    pairs = np.where(pdist < 0.15)
-    dupa, dupb = list(), list()
-    for p, q in zip(*pairs):
-        timep = stracksa[p].frame_id - stracksa[p].start_frame
-        timeq = stracksb[q].frame_id - stracksb[q].start_frame
-        if timep > timeq:
-            dupb.append(q)
-        else:
-            dupa.append(p)
-    resa = [t for i, t in enumerate(stracksa) if not i in dupa]
-    resb = [t for i, t in enumerate(stracksb) if not i in dupb]
-    return resa, resb

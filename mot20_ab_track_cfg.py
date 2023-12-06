@@ -2,6 +2,7 @@ from detectron2.config import LazyCall as L
 from omegaconf import OmegaConf
 from .datasets.builder import build_test_loader
 from .models.model_utils import get_model
+# if do ablation please invalidate the specific thresh settings from 124 - 138 in evaluators.py
 
 # build dataloader
 dataloader = OmegaConf.create()
@@ -46,12 +47,21 @@ track = dict(
     depth_levels = 1,
     depth_levels_low = 8,
     confirm_thresh = 0.7,
+    # is fuse scores
     mot20 = True,
+    # trackers
     byte = False,
     deep = True,
+    bot = False,
+    sort = False,
+    ocsort = False,
+    # detector model settings
     fp16 = True,
     fuse = True,
-    val_ann = "val_half.json"
+    # val json
+    val_ann = "val_half.json",
+    # is public dets using 
+    is_public = False   
 )
  
  

@@ -7,8 +7,6 @@
 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/sparsetrack-multi-object-tracking-by/multi-object-tracking-on-mot17)](https://paperswithcode.com/sota/multi-object-tracking-on-mot17?p=sparsetrack-multi-object-tracking-by)
 
-[![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/sparsetrack-multi-object-tracking-by/multi-object-tracking-on-dancetrack)](https://paperswithcode.com/sota/multi-object-tracking-on-dancetrack?p=sparsetrack-multi-object-tracking-by)
-
 > [**SparseTrack: Multi-Object Tracking by Performing Scene Decomposition based on Pseudo-Depth**](https://arxiv.org/abs/2306.05238)
 > 
 > Zelin Liu, Xinggang Wang, Cheng Wang, Wenyu Liu, Xiang Bai
@@ -17,8 +15,7 @@
 
 
 ## News
-- Add yolov8 detector for tracking (the implementation of detectron2 version), please refer to branch v8.
-- The experimental part of paper is still undergoing further proofreading, and the currently uploaded paper is not the final version.
+- Add yolov8 detector for tracking, please refer to branch v8.
 
 ## Abstract
 Exploring robust and efficient association methods has always been an important issue in multiple-object tracking (MOT). Although existing tracking methods have achieved impressive performance, congestion and frequent occlusions still pose challenging problems in multi-object tracking. We reveal that performing sparse decomposition on dense scenes is a crucial step to enhance the performance of associating occluded targets. To this end, we propose a pseudo-depth estimation method for obtaining the relative depth of targets from 2D images.  Secondly, we design a depth cascading matching (DCM) algorithm, which can use the obtained depth information to convert a dense target set into multiple sparse target subsets and perform data association on these sparse target subsets in order from near to far. By integrating the pseudo-depth method and the DCM strategy into the data association process, we propose a new tracker, called SparseTrack. SparseTrack provides a new perspective for solving the challenging crowded scene MOT problem. Only using IoU matching, SparseTrack achieves comparable performance with the state-of-the-art (SOTA) methods on the MOT17 and MOT20 benchmarks.
@@ -46,8 +43,6 @@ Exploring robust and efficient association methods has always been an important 
 ## Installation
 #### Dependence
 This project is an implementation version of [Detectron2](https://github.com/facebookresearch/detectron2) and requires the compilation of [OpenCV](https://opencv.org/), [Boost](https://www.boost.org).
-
-Version Information: OpenCV-4.6.0, Boost-1.74.0, pip install torch == 1.9.1+cu111 torchvision==0.10.1+cu111 torchaudio==0.9.1, Python 3.9.16. 
 
 #### Compile GMC(Globle Motion Compensation) module
 >step 1: Downloading [pbcvt](https://github.com/Algomorph/pyboostcvconverter), copy the [python_module.cpp](https://github.com/hustvl/SparseTrack/blob/main/python_module.cpp) to the path **<[pbcvt](https://github.com/Algomorph/pyboostcvconverter)/src/>**.
@@ -146,8 +141,7 @@ See [ByteTrack.model_zoo](https://github.com/ifzhang/ByteTrack#model-zoo). We us
 
 Additionally, we conducted joint training on MOT20 train half and Crowdhuman, and evaluated on MOT20 val half. The model as follows: [yolox_x_mot20_ablation](https://drive.google.com/file/d/1F2XwyYKj1kefLPUFRHxgnpaAmEwyoocw/view?usp=drive_link)
 
-The model trained on DanceTrack can be available at :
-- [DanceTrack](https://drive.google.com/drive/folders/1ASZCFpPEfSOJRktR8qQ_ZoT9nZR0hOea?usp=sharing)
+The model trained on DanceTrack can be available at google:[yolox_x_dancetrack](https://drive.google.com/drive/folders/1-uxcNTi7dhuDNGC5MmzXyllLzmVbzXay?usp=sharing) or baidu: [yolox_x_dancetrack](https://pan.baidu.com/s/1FIIy9mKnNQQrI7ACCAKRjQ), the extracted key as: sptk
 
 
 ## Training

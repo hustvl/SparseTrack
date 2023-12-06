@@ -2,6 +2,14 @@ from detectron2.config import LazyCall as L
 from omegaconf import OmegaConf
 from .datasets.builder import build_test_loader
 from .models.model_utils import get_model
+
+# build dataloader
+dataloader = OmegaConf.create()
+dataloader.test = L(build_test_loader)(
+    test_size = (800, 1440), 
+    infer_batch = 1 # for tracking process frame by frame 
+)
+ 
 # build model
 model = L(get_model)(
     model_type = 'yolox',
@@ -11,22 +19,11 @@ model = L(get_model)(
     confthre = 0.01,
     nmsthre = 0.7
 )
-# get video information
-video = dict(
-    path = '/data/zelinliu/MOT20/train/MOT20-02/img1',
-    rgb_means = (0.485, 0.456, 0.406),
-    std = (0.229, 0.224, 0.225),
-    test_size = (896, 1600),
-    save_img_result = True,
-    save_video_result = False,
-    name = 'demo_20.mp4',
-    fps = 25
-)
 
 # build train cfg 
 train = dict(
-    output_dir="./yolox_mix20",
-    init_checkpoint="/data/zelinliu/sparsetrack/pretrain/bytetrack_x_mot20.tar",
+    output_dir="./yolox_mix20_ablation",
+    init_checkpoint="/data/zelinliu/sparsetrack/pretrain/bytetrack_20_ablation.pth.tar",
     # model ema
     model_ema = dict(
         enabled=False,
@@ -40,21 +37,30 @@ train = dict(
 
 # build tracker
 track = dict(
-    experiment_name = "yolox_mix20_det",
-    track_thresh = 0.6,
-    track_buffer = 60,
-    match_thresh = 0.6,
+    experiment_name = "yolox_mix20_ablation_levels",
+    track_thresh = 0.65,
+    track_buffer = 90,
+    match_thresh = 0.8,
     min_box_area = 100,
     down_scale = 4,
     depth_levels = 1,
-    depth_levels_low = 8,
+    depth_levels_low = 7,
     confirm_thresh = 0.7,
+    # is fuse scores
     mot20 = True,
-    byte = False,
-    deep = True,
+    # trackers
+    byte = True,
+    deep = False,
+    bot = False,
+    sort = False,
+    ocsort = False,
+    # detector model settings
     fp16 = True,
     fuse = True,
-    val_ann = "train.json"
+    # val json
+    val_ann = "val_half.json",
+    # is public dets using 
+    is_public = False
 )
  
  

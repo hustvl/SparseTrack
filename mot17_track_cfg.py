@@ -43,15 +43,23 @@ track = dict(
     match_thresh = 0.75,
     min_box_area = 100,
     down_scale = 4,
-    depth_levels = 3,
+    depth_levels = 1,
     depth_levels_low = 3,
     confirm_thresh = 0.8,
+    # is fuse scores
     mot20 = False,
+    # trackers
     byte = False,
     deep = True,
+    bot = False,
+    sort = False,
+    ocsort = False,
+    # detector model settings
     fp16 = True,
     fuse = True,
-    val_ann = "train.json"
+    val_ann = "train.json",
+    # is public dets using 
+    is_public = False
 )
  
  

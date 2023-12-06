@@ -315,9 +315,9 @@ def dti(txt_path, save_path, n_min=25, n_dti=20):
 
 if __name__ == '__main__':
     # data_root = '/data/zelinliu/DanceTrack/dancetrack/test'
-    data_root = '/data/zelinliu/DanceTrack/dancetrack/test'
-    txt_path = '/data/zelinliu/sparsetrack/yolox_dance_sparse/yolox_dance_sparse_det/track_results'
-    save_path = '/data/zelinliu/sparsetrack/yolox_dance_sparse/yolox_dance_sparse_det/track_results_dti'
+    data_root = '/data/zelinliu/MOT17/test'
+    txt_path = '/data/zelinliu/sparsetrack/yolox_mix17/yolox_mix17_det/track_results'
+    save_path = '/data/zelinliu/sparsetrack/yolox_mix17/yolox_mix17_det/track_results_dti'
     
     mkdir_if_missing(save_path)
     dti(txt_path, save_path, n_min=5, n_dti=20)

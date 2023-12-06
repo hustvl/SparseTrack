@@ -35,7 +35,7 @@ train = dict(
     device="cuda",
 )
 
-# build tracker
+# build tracker. For mot20, dancetrack -- unenabled GMC: 368 - 373 in sparse_tracker.py
 track = dict(
     experiment_name = "yolox_mix20_det",
     track_thresh = 0.6,
@@ -46,12 +46,21 @@ track = dict(
     depth_levels = 1,
     depth_levels_low = 8,
     confirm_thresh = 0.7,
+    # is fuse scores
     mot20 = True,
+    # trackers
     byte = False,
     deep = True,
+    bot = False,
+    sort = False,
+    ocsort = False,
+    # detector model settings
     fp16 = True,
     fuse = True,
-    val_ann = "train.json"
+    # val json
+    val_ann = "train.json",
+    # is public dets using 
+    is_public = False   
 )
  
  
