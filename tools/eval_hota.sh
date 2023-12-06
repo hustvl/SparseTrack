@@ -1,6 +1,6 @@
 # need to change paths
 gt_folder_path=/path/to/MOT20/train
-val_map_path=/path/to/MOT20/val_seqmap.txt
+val_map_path=/path/to/MOT20/20val_seqmap.txt
 track_results_path=/path/to/sparsetrack/yolox_mix20_ablation/yolox_mix20_ablation_det/track_results
 
 # need to change 'gt_val_half.txt' or 'gt.txt'
