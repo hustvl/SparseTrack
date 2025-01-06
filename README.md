@@ -180,16 +180,16 @@ CUDA_VISIBLE_DEVICES=0 python3 track.py  --num-gpus 1  --config-file mot20_ab_tr
 ```
 
 #### Tracking on dancetrack test set
->step 1: Please comment out line 368-373 in the [sparse_tracker.py](https://github.com/hustvl/SparseTrack/blob/main/tracker/sparse_tracker.py) and modify the threshold for low-score matching stage from 0.3 to 0.35 (at line 402 in the sparse_tracker.py).
+> Step 1: Please comment out line 368-373 in the [sparse_tracker.py](https://github.com/hustvl/SparseTrack/blob/main/tracker/sparse_tracker.py) and modify the threshold for low-score matching stage from 0.3 to 0.35 (at line 402 in the sparse_tracker.py).
 >
->step 2: Running:
+> Step 2: Running:
 ```
 CUDA_VISIBLE_DEVICES=0 python3 track.py  --num-gpus 1  --config-file dancetrack_sparse_cfg.py
 ```
 
 
  
-## Citation -->
+## Citation
 If you find SparseTrack is useful in your research or applications, please consider giving us a star 🌟 and citing it by the following BibTeX entry.
 ```bibtex
 @article{liu2025sparsetrack,
@@ -203,5 +203,5 @@ If you find SparseTrack is useful in your research or applications, please consi
 
 ## Acknowledgements
 A large part of the code is borrowed from [YOLOX](https://github.com/Megvii-BaseDetection/YOLOX), [FairMOT](https://github.com/ifzhang/FairMOT), [ByteTrack](https://github.com/ifzhang/ByteTrack), [BoT-SORT](https://github.com/NirAharon/BOT-SORT), [Detectron2](https://github.com/facebookresearch/detectron2). 
- Many thanks for their wonderful works.
+ Many thanks for their wonderful work.
 
