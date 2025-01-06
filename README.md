@@ -1,7 +1,7 @@
 
 
 # SparseTrack
-####  SparseTrack is a simply and strong multi-object tracker. 
+####  SparseTrack is a simple and strong multi-object tracker. 
 
 [![PWC](https://img.shields.io/endpoint.svg?url=https://paperswithcode.com/badge/sparsetrack-multi-object-tracking-by/multi-object-tracking-on-mot20-1)](https://paperswithcode.com/sota/multi-object-tracking-on-mot20-1?p=sparsetrack-multi-object-tracking-by)
 
@@ -11,7 +11,7 @@
 > 
 > Zelin Liu, Xinggang Wang, Cheng Wang, Wenyu Liu, Xiang Bai
 > 
-> *[arXiv 2306.05238](https://arxiv.org/abs/2306.05238)*
+> *IEEE TCSVT 2025 & [arXiv 2306.05238](https://arxiv.org/abs/2306.05238)*
 
 
 ## News
@@ -192,11 +192,12 @@ CUDA_VISIBLE_DEVICES=0 python3 track.py  --num-gpus 1  --config-file dancetrack_
 ## Citation -->
 If you find SparseTrack is useful in your research or applications, please consider giving us a star 🌟 and citing it by the following BibTeX entry.
 ```bibtex
-@inproceedings{SparseTrack,
-  title={SparseTrack: Multi-Object Tracking by Performing Scene Decomposition based on Pseudo-Depth},
+@article{liu2025sparsetrack,
+  title={Sparsetrack: Multi-object tracking by performing scene decomposition based on pseudo-depth},
   author={Liu, Zelin and Wang, Xinggang and Wang, Cheng and Liu, Wenyu and Bai, Xiang},
-  journal={arXiv preprint arXiv:2306.05238},
-  year={2023}
+  journal={IEEE Transactions on Circuits and Systems for Video Technology},
+  year={2025},
+  publisher={IEEE}
 }
 ```
 
