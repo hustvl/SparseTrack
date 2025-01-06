@@ -16,6 +16,7 @@
 
 ## News
 - Add yolov8 detector for tracking, please refer to branch v8.
+- Accept by TSCVT!
 
 ## Abstract
 Exploring robust and efficient association methods has always been an important issue in multiple-object tracking (MOT). Although existing tracking methods have achieved impressive performance, congestion and frequent occlusions still pose challenging problems in multi-object tracking. We reveal that performing sparse decomposition on dense scenes is a crucial step to enhance the performance of associating occluded targets. To this end, we propose a pseudo-depth estimation method for obtaining the relative depth of targets from 2D images.  Secondly, we design a depth cascading matching (DCM) algorithm, which can use the obtained depth information to convert a dense target set into multiple sparse target subsets and perform data association on these sparse target subsets in order from near to far. By integrating the pseudo-depth method and the DCM strategy into the data association process, we propose a new tracker, called SparseTrack. SparseTrack provides a new perspective for solving the challenging crowded scene MOT problem. Only using IoU matching, SparseTrack achieves comparable performance with the state-of-the-art (SOTA) methods on the MOT17 and MOT20 benchmarks.
